@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PeluqueriaElCojo.Modelos
+﻿namespace PeluqueriaElCojo.Modelos
 {
     public interface IFacturable
     {

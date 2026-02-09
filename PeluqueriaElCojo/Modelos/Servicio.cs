@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace PeluqueriaElCojo.Modelos
+﻿namespace PeluqueriaElCojo.Modelos
 {
     public class Servicio : IFacturable
     {
