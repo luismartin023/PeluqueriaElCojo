@@ -81,7 +81,7 @@ namespace PeluqueriaElCojo
             decimal sub = 0;
             foreach (Servicio s in _servicios)
             {
-                sb.AppendLine(string.Format("║  {0,-27}║", s.GenerarLineaRecibo()));
+                sb.AppendLine(string.Format("║  {0,-27}║", s.GeneralLineraRecibo()));
                 sub += s.CalcularPrecio();
             }
 
@@ -109,6 +109,11 @@ namespace PeluqueriaElCojo
             chkToalla.Checked = false;
             chkCejas.Checked = false;
             numNivel.Value = 1;
+        }
+
+        private void pcbSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

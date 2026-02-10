@@ -47,11 +47,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.pcbSalir = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numNivel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -299,17 +299,6 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::PeluqueriaElCojo.Properties.Resources.Captura_de_pantalla_2026_02_09_194549_Photoroom;
-            this.pictureBox2.Location = new System.Drawing.Point(1074, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -323,6 +312,18 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "RECIBO";
             // 
+            // pcbSalir
+            // 
+            this.pcbSalir.BackColor = System.Drawing.Color.Transparent;
+            this.pcbSalir.Image = global::PeluqueriaElCojo.Properties.Resources.Captura_de_pantalla_2026_02_09_194549_Photoroom;
+            this.pcbSalir.Location = new System.Drawing.Point(1055, 12);
+            this.pcbSalir.Name = "pcbSalir";
+            this.pcbSalir.Size = new System.Drawing.Size(70, 55);
+            this.pcbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbSalir.TabIndex = 21;
+            this.pcbSalir.TabStop = false;
+            this.pcbSalir.Click += new System.EventHandler(this.pcbSalir_Click);
+            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,8 +332,8 @@
             this.BackgroundImage = global::PeluqueriaElCojo.Properties.Resources.Gemini_Generated_Image_ukaddyukaddyukad;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1137, 619);
+            this.Controls.Add(this.pcbSalir);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -358,7 +359,7 @@
             this.Text = "PELUQUERIA";
             ((System.ComponentModel.ISupportInitialize)(this.numNivel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,8 +386,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pcbSalir;
     }
 }
 
