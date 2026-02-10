@@ -117,9 +117,9 @@
             this.lstClientes.ForeColor = System.Drawing.Color.Black;
             this.lstClientes.FormattingEnabled = true;
             this.lstClientes.ItemHeight = 23;
-            this.lstClientes.Location = new System.Drawing.Point(63, 433);
+            this.lstClientes.Location = new System.Drawing.Point(12, 433);
             this.lstClientes.Name = "lstClientes";
-            this.lstClientes.Size = new System.Drawing.Size(274, 117);
+            this.lstClientes.Size = new System.Drawing.Size(427, 117);
             this.lstClientes.TabIndex = 5;
             this.lstClientes.SelectedIndexChanged += new System.EventHandler(this.lstClientes_SelectedIndexChanged);
             // 
