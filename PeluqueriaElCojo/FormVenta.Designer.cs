@@ -1,6 +1,6 @@
 ﻿namespace PeluqueriaElCojo
 {
-    partial class Form1
+    partial class FormVenta
     {
         /// <summary>
         /// Variable del diseñador necesaria.

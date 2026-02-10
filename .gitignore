@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/PeluqueriaElCojo/VENTA.resx
+/PeluqueriaElCojo/VENTA.Designer.cs
+/PeluqueriaElCojo/VENTA.cs
