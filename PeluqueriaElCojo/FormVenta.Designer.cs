@@ -59,22 +59,20 @@
             this.txtNombre.BackColor = System.Drawing.Color.Ivory;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(87, 204);
+            this.txtNombre.Location = new System.Drawing.Point(63, 270);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(274, 30);
             this.txtNombre.TabIndex = 0;
-            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTelefono
             // 
             this.txtTelefono.BackColor = System.Drawing.Color.Ivory;
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(87, 281);
+            this.txtTelefono.Location = new System.Drawing.Point(63, 347);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(274, 30);
             this.txtTelefono.TabIndex = 1;
-            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtRecibo
             // 
@@ -84,14 +82,14 @@
             this.txtRecibo.Location = new System.Drawing.Point(770, 176);
             this.txtRecibo.Multiline = true;
             this.txtRecibo.Name = "txtRecibo";
-            this.txtRecibo.Size = new System.Drawing.Size(317, 359);
+            this.txtRecibo.Size = new System.Drawing.Size(396, 380);
             this.txtRecibo.TabIndex = 2;
             // 
             // btnAgregarCliente
             // 
             this.btnAgregarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnAgregarCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCliente.Location = new System.Drawing.Point(474, 438);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(477, 496);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(116, 43);
             this.btnAgregarCliente.TabIndex = 3;
@@ -103,7 +101,7 @@
             // 
             this.btnCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnCobrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(870, 550);
+            this.btnCobrar.Location = new System.Drawing.Point(917, 594);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(109, 42);
             this.btnCobrar.TabIndex = 4;
@@ -119,7 +117,7 @@
             this.lstClientes.ForeColor = System.Drawing.Color.Black;
             this.lstClientes.FormattingEnabled = true;
             this.lstClientes.ItemHeight = 23;
-            this.lstClientes.Location = new System.Drawing.Point(87, 367);
+            this.lstClientes.Location = new System.Drawing.Point(63, 433);
             this.lstClientes.Name = "lstClientes";
             this.lstClientes.Size = new System.Drawing.Size(274, 117);
             this.lstClientes.TabIndex = 5;
@@ -127,14 +125,13 @@
             // 
             // chkCorteNormal
             // 
-            this.chkCorteNormal.Appearance = System.Windows.Forms.Appearance.Button;
             this.chkCorteNormal.AutoSize = true;
             this.chkCorteNormal.BackColor = System.Drawing.Color.Ivory;
             this.chkCorteNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkCorteNormal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCorteNormal.Location = new System.Drawing.Point(474, 200);
+            this.chkCorteNormal.Location = new System.Drawing.Point(477, 258);
             this.chkCorteNormal.Name = "chkCorteNormal";
-            this.chkCorteNormal.Size = new System.Drawing.Size(210, 33);
+            this.chkCorteNormal.Size = new System.Drawing.Size(222, 27);
             this.chkCorteNormal.TabIndex = 6;
             this.chkCorteNormal.Text = "Corte Normal (RD$200)";
             this.chkCorteNormal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,14 +139,13 @@
             // 
             // chkDegradado
             // 
-            this.chkDegradado.Appearance = System.Windows.Forms.Appearance.Button;
             this.chkDegradado.AutoSize = true;
             this.chkDegradado.BackColor = System.Drawing.Color.Ivory;
             this.chkDegradado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkDegradado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDegradado.Location = new System.Drawing.Point(474, 290);
+            this.chkDegradado.Location = new System.Drawing.Point(477, 348);
             this.chkDegradado.Name = "chkDegradado";
-            this.chkDegradado.Size = new System.Drawing.Size(110, 33);
+            this.chkDegradado.Size = new System.Drawing.Size(122, 27);
             this.chkDegradado.TabIndex = 7;
             this.chkDegradado.Text = "Degradado";
             this.chkDegradado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,14 +153,13 @@
             // 
             // chkAfeitado
             // 
-            this.chkAfeitado.Appearance = System.Windows.Forms.Appearance.Button;
             this.chkAfeitado.AutoSize = true;
             this.chkAfeitado.BackColor = System.Drawing.Color.Ivory;
             this.chkAfeitado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkAfeitado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAfeitado.Location = new System.Drawing.Point(474, 244);
+            this.chkAfeitado.Location = new System.Drawing.Point(477, 302);
             this.chkAfeitado.Name = "chkAfeitado";
-            this.chkAfeitado.Size = new System.Drawing.Size(171, 33);
+            this.chkAfeitado.Size = new System.Drawing.Size(183, 27);
             this.chkAfeitado.TabIndex = 8;
             this.chkAfeitado.Text = "\tAfeitado (RD$150)";
             this.chkAfeitado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,14 +167,13 @@
             // 
             // chkToalla
             // 
-            this.chkToalla.Appearance = System.Windows.Forms.Appearance.Button;
             this.chkToalla.AutoSize = true;
             this.chkToalla.BackColor = System.Drawing.Color.Ivory;
             this.chkToalla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkToalla.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkToalla.Location = new System.Drawing.Point(474, 334);
+            this.chkToalla.Location = new System.Drawing.Point(477, 392);
             this.chkToalla.Name = "chkToalla";
-            this.chkToalla.Size = new System.Drawing.Size(166, 33);
+            this.chkToalla.Size = new System.Drawing.Size(178, 27);
             this.chkToalla.TabIndex = 9;
             this.chkToalla.Text = "+ Toalla (+RD$50)";
             this.chkToalla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,14 +181,13 @@
             // 
             // chkCejas
             // 
-            this.chkCejas.Appearance = System.Windows.Forms.Appearance.Button;
             this.chkCejas.AutoSize = true;
             this.chkCejas.BackColor = System.Drawing.Color.Ivory;
             this.chkCejas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkCejas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCejas.Location = new System.Drawing.Point(474, 375);
+            this.chkCejas.Location = new System.Drawing.Point(477, 433);
             this.chkCejas.Name = "chkCejas";
-            this.chkCejas.Size = new System.Drawing.Size(132, 33);
+            this.chkCejas.Size = new System.Drawing.Size(144, 27);
             this.chkCejas.TabIndex = 10;
             this.chkCejas.Text = "Cejas (RD$75)";
             this.chkCejas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -205,7 +198,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.Ivory;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(455, 496);
+            this.lblTotal.Location = new System.Drawing.Point(458, 554);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(135, 28);
             this.lblTotal.TabIndex = 11;
@@ -217,7 +210,7 @@
             this.numNivel.BackColor = System.Drawing.Color.Ivory;
             this.numNivel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numNivel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numNivel.Location = new System.Drawing.Point(116, 534);
+            this.numNivel.Location = new System.Drawing.Point(114, 604);
             this.numNivel.Name = "numNivel";
             this.numNivel.Size = new System.Drawing.Size(136, 30);
             this.numNivel.TabIndex = 12;
@@ -230,7 +223,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Wheat;
-            this.label1.Location = new System.Drawing.Point(138, 167);
+            this.label1.Location = new System.Drawing.Point(156, 232);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 25);
             this.label1.TabIndex = 13;
@@ -243,7 +236,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Wheat;
-            this.label2.Location = new System.Drawing.Point(138, 247);
+            this.label2.Location = new System.Drawing.Point(156, 315);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 25);
             this.label2.TabIndex = 14;
@@ -269,7 +262,7 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Wheat;
-            this.label4.Location = new System.Drawing.Point(138, 328);
+            this.label4.Location = new System.Drawing.Point(153, 394);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 25);
             this.label4.TabIndex = 16;
@@ -282,17 +275,17 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Wheat;
-            this.label5.Location = new System.Drawing.Point(138, 496);
+            this.label5.Location = new System.Drawing.Point(134, 568);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 25);
+            this.label5.Size = new System.Drawing.Size(102, 25);
             this.label5.TabIndex = 17;
-            this.label5.Text = "Cantidad";
+            this.label5.Text = "Degradado";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::PeluqueriaElCojo.Properties.Resources.Gemini_Generated_Image_v1boyv1boyv1boyv_Photoroom;
-            this.pictureBox1.Location = new System.Drawing.Point(419, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(477, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(240, 137);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -306,7 +299,7 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(892, 148);
+            this.label6.Location = new System.Drawing.Point(934, 137);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 25);
             this.label6.TabIndex = 20;
@@ -316,7 +309,7 @@
             // 
             this.pcbSalir.BackColor = System.Drawing.Color.Transparent;
             this.pcbSalir.Image = global::PeluqueriaElCojo.Properties.Resources.Captura_de_pantalla_2026_02_09_194549_Photoroom;
-            this.pcbSalir.Location = new System.Drawing.Point(1055, 12);
+            this.pcbSalir.Location = new System.Drawing.Point(1126, 12);
             this.pcbSalir.Name = "pcbSalir";
             this.pcbSalir.Size = new System.Drawing.Size(70, 55);
             this.pcbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -331,7 +324,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::PeluqueriaElCojo.Properties.Resources.Gemini_Generated_Image_ukaddyukaddyukad;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1137, 619);
+            this.ClientSize = new System.Drawing.Size(1205, 676);
             this.Controls.Add(this.pcbSalir);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
@@ -357,6 +350,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVenta";
             this.Text = "PELUQUERIA";
+            this.Load += new System.EventHandler(this.FormVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numNivel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbSalir)).EndInit();

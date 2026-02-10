@@ -17,7 +17,7 @@
 
         public virtual string GeneralLineraRecibo()
         {
-            return string.Format("{0-20}  RD${1:NO}", Nombre, CalcularPrecio());
+            return string.Format("{0,-20}  RD${1:N0}", Nombre, CalcularPrecio());
         }
     }
 }
