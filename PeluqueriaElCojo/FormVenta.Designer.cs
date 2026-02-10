@@ -97,6 +97,7 @@
             this.btnAgregarCliente.TabIndex = 3;
             this.btnAgregarCliente.Text = "AGREGAR";
             this.btnAgregarCliente.UseVisualStyleBackColor = false;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // btnCobrar
             // 
@@ -108,6 +109,7 @@
             this.btnCobrar.TabIndex = 4;
             this.btnCobrar.Text = "COBRAR";
             this.btnCobrar.UseVisualStyleBackColor = false;
+            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
             // 
             // lstClientes
             // 
@@ -121,6 +123,7 @@
             this.lstClientes.Name = "lstClientes";
             this.lstClientes.Size = new System.Drawing.Size(274, 117);
             this.lstClientes.TabIndex = 5;
+            this.lstClientes.SelectedIndexChanged += new System.EventHandler(this.lstClientes_SelectedIndexChanged);
             // 
             // chkCorteNormal
             // 
@@ -320,7 +323,7 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "RECIBO";
             // 
-            // Form1
+            // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -351,7 +354,7 @@
             this.Controls.Add(this.txtNombre);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "FormVenta";
             this.Text = "PELUQUERIA";
             ((System.ComponentModel.ISupportInitialize)(this.numNivel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
