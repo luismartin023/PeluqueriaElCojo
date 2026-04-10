@@ -27,9 +27,20 @@ namespace PeluqueriaElCojo.Modelos
             get { return _telefono; }
             set
             {
+                // 1. Limpiar espacios y guiones
                 string limpio = value.Replace(" ", "").Replace("-", "");
+
+                // 2. Verificar que solo sean números (Evita letras)
+                foreach (char c in limpio)
+                {
+                    if (!char.IsDigit(c))
+                        throw new ArgumentException("El teléfono solo debe contener números.");
+                }
+
+                // 3. Verificar longitud exacta
                 if (limpio.Length != 10)
-                    throw new ArgumentException("Telefono: 10 digitos");
+                    throw new ArgumentException("El teléfono debe tener exactamente 10 dígitos.");
+
                 _telefono = limpio;
             }
         }
@@ -77,6 +88,7 @@ namespace PeluqueriaElCojo.Modelos
             return string.Format("[{0}] {1} ({2}) - {3}", Id, Nombre, Tipo, TelefonoFormateado());
         }
 
+
+
     }
-    
 }

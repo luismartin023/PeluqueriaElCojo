@@ -117,16 +117,36 @@
             // numSueldoBase
             // 
             this.numSueldoBase.Location = new System.Drawing.Point(137, 309);
+            this.numSueldoBase.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numSueldoBase.Name = "numSueldoBase";
             this.numSueldoBase.Size = new System.Drawing.Size(120, 22);
             this.numSueldoBase.TabIndex = 32;
+            this.numSueldoBase.Value = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             // 
             // numComision
             // 
             this.numComision.Location = new System.Drawing.Point(137, 370);
+            this.numComision.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numComision.Name = "numComision";
             this.numComision.Size = new System.Drawing.Size(120, 22);
             this.numComision.TabIndex = 33;
+            this.numComision.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             // 
             // label1
             // 

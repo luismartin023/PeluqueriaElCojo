@@ -14,6 +14,28 @@ namespace PeluqueriaElCojo
         public FormInventario()
         {
             InitializeComponent();
+
+            // Código: solo letras, números y guiones (sin espacios ni símbolos raros)
+            txtCodigo.KeyPress += (s, e) =>
+            {
+                if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+            };
+
+            // Nombre del producto: solo letras y espacios
+            txtNombre.KeyPress += (s, e) =>
+            {
+                if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+            };
+
+            // Categoría: solo letras y espacios
+            txtCategoria.KeyPress += (s, e) =>
+            {
+                if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+            };
+
         }
 
 

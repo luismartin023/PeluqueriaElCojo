@@ -20,12 +20,63 @@ namespace PeluqueriaElCojo
         public FormVenta()
         {
             InitializeComponent();
+
+            // Solo números en el teléfono, máx 10 dígitos
+            txtTelefono.KeyPress += (s, e) =>
+            {
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+
+                if (char.IsDigit(e.KeyChar) && txtTelefono.Text.Length >= 10)
+                    e.Handled = true;
+            };
+
+            // Nombre: solo letras y espacios, sin números
+            txtNombre.KeyPress += (s, e) =>
+            {
+                if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+            };
         }
+
+
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
+            // Validación previa de entrada para evitar que el constructor lance excepción
+            string nombre = txtNombre.Text ?? string.Empty;
+            string rawTel = txtTelefono.Text ?? string.Empty;
+            string limpio = rawTel.Replace(" ", "").Replace("-", "").Trim();
+
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                MessageBox.Show("Ingrese un nombre válido.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(limpio))
+            {
+                MessageBox.Show("Ingrese un teléfono.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            foreach (char c in limpio)
+            {
+                if (!char.IsDigit(c))
+                {
+                    MessageBox.Show("El teléfono solo debe contener números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            if (limpio.Length != 10)
+            {
+                MessageBox.Show("El teléfono debe tener exactamente 10 dígitos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // 1. Crear la instancia del modelo
-            Cliente nuevoCliente = new Cliente(txtNombre.Text, txtTelefono.Text);
+            Cliente nuevoCliente = new Cliente(nombre, txtTelefono.Text);
 
             // 2. Validar usando Reflection (Punto clave de la Unidad 3)
             List<string> errores = Validador.Validar(nuevoCliente);
@@ -299,6 +350,9 @@ namespace PeluqueriaElCojo
             frm.ShowDialog();
             CargarEmpleadosDesdeSQL(); // Actualiza la lista después de registrar
         }
+
+
+
     }
 }
 

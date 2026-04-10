@@ -73,20 +73,45 @@
             // numPrecio
             // 
             this.numPrecio.Location = new System.Drawing.Point(59, 252);
+            this.numPrecio.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numPrecio.Name = "numPrecio";
             this.numPrecio.Size = new System.Drawing.Size(120, 22);
             this.numPrecio.TabIndex = 3;
+            this.numPrecio.Value = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
             // 
             // numCosto
             // 
             this.numCosto.Location = new System.Drawing.Point(254, 252);
+            this.numCosto.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numCosto.Name = "numCosto";
             this.numCosto.Size = new System.Drawing.Size(120, 22);
             this.numCosto.TabIndex = 4;
+            this.numCosto.Value = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
             // 
             // numStock
             // 
             this.numStock.Location = new System.Drawing.Point(147, 311);
+            this.numStock.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numStock.Name = "numStock";
             this.numStock.Size = new System.Drawing.Size(137, 22);
             this.numStock.TabIndex = 5;

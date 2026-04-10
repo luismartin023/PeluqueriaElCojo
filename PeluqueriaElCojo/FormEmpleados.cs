@@ -11,6 +11,39 @@ namespace PeluqueriaElCojo
         public FormEmpleados()
         {
             InitializeComponent();
+
+            // Nombre: solo letras y espacios
+            txtNombre.KeyPress += (s, e) =>
+            {
+                if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+            };
+
+            // Apodo: solo letras y espacios
+            txtApodo.KeyPress += (s, e) =>
+            {
+                if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+            };
+
+            // Cédula: solo números, máx 11
+            txtCedula.KeyPress += (s, e) =>
+            {
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+                if (char.IsDigit(e.KeyChar) && txtCedula.Text.Length >= 11)
+                    e.Handled = true;
+            };
+
+            txtTelefono.KeyPress += (s, e) =>
+            {
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                    e.Handled = true;
+
+                if (char.IsDigit(e.KeyChar) && txtTelefono.Text.Length >= 10)
+                    e.Handled = true;
+            };
+
         }
 
         private void btnGuardarEmpleado_Click(object sender, EventArgs e)
