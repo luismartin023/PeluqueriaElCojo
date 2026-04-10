@@ -16,6 +16,7 @@ namespace PeluqueriaElCojo
         private List<Empleado> _empleados = new List<Empleado>();
         private Cliente _clienteActual = null;
 
+
         public FormVenta()
         {
             InitializeComponent();
@@ -66,62 +67,51 @@ namespace PeluqueriaElCojo
         private void btnCobrar_Click(object sender, EventArgs e)
         {
             if (_clienteActual == null) { MessageBox.Show("Selecciona cliente"); return; }
+            if (clbItems.CheckedItems.Count == 0) { MessageBox.Show("Selecciona servicios o productos"); return; }
 
-            _servicios.Clear();
-            if (chkCorteNormal.Checked) _servicios.Add(new CorteNormal());
-            if (chkDegradado.Checked) _servicios.Add(new Degradado((int)numNivel.Value));
-            if (chkAfeitado.Checked) _servicios.Add(new Afeitado(chkToalla.Checked));
-            if (chkCejas.Checked) _servicios.Add(new CorteCejas());
+            // Usamos una lista de la interfaz para aprovechar el Polimorfismo
+            List<IFacturable> itemsFactura = new List<IFacturable>();
+            foreach (var item in clbItems.CheckedItems)
+            {
+                itemsFactura.Add((IFacturable)item);
+            }
 
-            if (_servicios.Count == 0) { MessageBox.Show("Selecciona servicios"); return; }
-
-            decimal total = CalcularTotal();
+            decimal total = CalcularTotalItems(itemsFactura);
             _clienteActual.RegistrarVisita();
 
             try
             {
                 using (SqlConnection conn = ConexionDB.ObtenerConexion())
                 {
-                    // 1. Insertar la Factura y obtener su ID
-                    string queryFactura = @"INSERT INTO Facturas (ClienteId, Total, Fecha) 
-                                   VALUES (@cid, @total, @fecha); SELECT SCOPE_IDENTITY();";
-                    SqlCommand cmdFact = new SqlCommand(queryFactura, conn);
-                    cmdFact.Parameters.AddWithValue("@cid", _clienteActual.Id);
-                    cmdFact.Parameters.AddWithValue("@total", total);
-                    cmdFact.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    // Guardar cabecera de factura
+                    string qFact = "INSERT INTO Facturas (ClienteId, Total, Fecha) VALUES (@cid, @total, @f); SELECT SCOPE_IDENTITY();";
+                    SqlCommand cmd = new SqlCommand(qFact, conn);
+                    cmd.Parameters.AddWithValue("@cid", _clienteActual.Id);
+                    cmd.Parameters.AddWithValue("@total", total);
+                    cmd.Parameters.AddWithValue("@f", DateTime.Now);
+                    int facturaId = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    int facturaId = Convert.ToInt32(cmdFact.ExecuteScalar());
-
-                    // 2. Insertar cada servicio en el detalle (Polimorfismo en acción)
-                    foreach (Servicio s in _servicios)
+                    // Guardar detalles polimórficamente
+                    foreach (var item in itemsFactura)
                     {
-                        string queryDetalle = "INSERT INTO DetalleFactura (FacturaId, ServicioNombre, Precio) VALUES (@fid, @nom, @pre)";
-                        SqlCommand cmdDet = new SqlCommand(queryDetalle, conn);
+                        string qDet = "INSERT INTO DetalleFactura (FacturaId, ServicioNombre, Precio) VALUES (@fid, @nom, @pre)";
+                        SqlCommand cmdDet = new SqlCommand(qDet, conn);
                         cmdDet.Parameters.AddWithValue("@fid", facturaId);
-                        cmdDet.Parameters.AddWithValue("@nom", s.Nombre);
-                        cmdDet.Parameters.AddWithValue("@pre", s.CalcularPrecio());
+                        cmdDet.Parameters.AddWithValue("@nom", item.ToString());
+                        cmdDet.Parameters.AddWithValue("@pre", item.CalcularPrecio());
                         cmdDet.ExecuteNonQuery();
                     }
-
-                    // 3. Actualizar visitas del cliente en SQL
-                    string queryUpdate = "UPDATE Clientes SET Visitas = @vis, Tipo = @tipo WHERE Nombre = @nom";
-                    SqlCommand cmdUpd = new SqlCommand(queryUpdate, conn);
-                    cmdUpd.Parameters.AddWithValue("@vis", _clienteActual.Visitas);
-                    cmdUpd.Parameters.AddWithValue("@tipo", _clienteActual.Tipo.ToString());
-                    cmdUpd.Parameters.AddWithValue("@nom", _clienteActual.Nombre);
-                    cmdUpd.ExecuteNonQuery();
                 }
-
-                // Actualizar UI
-                lstClientes.Items[lstClientes.SelectedIndex] = _clienteActual;
-                txtRecibo.Text = GenerarRecibo();
+                txtRecibo.Text = GenerarReciboDinamico(itemsFactura);
                 lblTotal.Text = string.Format("TOTAL: RD${0:N2}", total);
+
+                // Llamamos a limpiar para que la UI quede lista para otro cobro
                 LimpiarChecks();
-                MessageBox.Show("Venta procesada y guardada en SQL.");
+                MessageBox.Show("¡Venta procesada con éxito!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al procesar cobro: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -131,15 +121,19 @@ namespace PeluqueriaElCojo
                 _clienteActual = _clientes[lstClientes.SelectedIndex];
         }
 
-        private decimal CalcularTotal()
+        private decimal CalcularTotalItems(List<IFacturable> items)
         {
             decimal sub = 0;
-            foreach (Servicio s in _servicios)
-                sub += s.CalcularPrecio();
+            foreach (var item in items) 
+            {
+                // Polimorfismo en acción: cada item sabe su propio precio
+                sub += item.CalcularPrecio();
+            }
+            // Cálculo de total aplicando descuento y el 18% de ITBIS requerido
             return sub * (1 - _clienteActual.ObtenerDescuento()) * 1.18m;
         }
 
-        private string GenerarRecibo()
+        private string GenerarReciboDinamico(List<IFacturable> itemsParaRecibo)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("╔═══════════════════════════════╗");
@@ -150,21 +144,22 @@ namespace PeluqueriaElCojo
             sb.AppendLine(string.Format("║ Tipo: {0,-23}║", _clienteActual.Tipo));
             sb.AppendLine("╠═══════════════════════════════╣");
 
-            decimal sub = 0;
-            foreach (Servicio s in _servicios)
+            decimal subtotalSimple = 0;
+            foreach (var item in itemsParaRecibo)
             {
-                sb.AppendLine(string.Format("║  {0,-27}║", s.GeneralLineraRecibo()));
-                sub += s.CalcularPrecio();
+                // Polimorfismo: cada item sabe cómo generar su línea de recibo
+                sb.AppendLine(string.Format("║  {0,-27}║", item.GeneralLineraRecibo()));
+                subtotalSimple += item.CalcularPrecio();
             }
 
-            sb.AppendLine("╠═══════════════════════════════╣");
-            sb.AppendLine(string.Format("║ Subtotal:        RD${0,8:N0} ║", sub));
-
             decimal desc = _clienteActual.ObtenerDescuento();
-            if (desc > 0)
-                sb.AppendLine(string.Format("║ Descuento ({0}%): -RD${1,6:N0} ║", desc * 100, sub * desc));
+            decimal baseI = subtotalSimple * (1 - desc);
 
-            decimal baseI = sub * (1 - desc);
+            sb.AppendLine("╠═══════════════════════════════╣");
+            sb.AppendLine(string.Format("║ Subtotal:        RD${0,8:N0} ║", subtotalSimple));
+            if (desc > 0)
+                sb.AppendLine(string.Format("║ Descuento ({0}%): -RD${1,6:N0} ║", desc * 100, subtotalSimple * desc));
+
             sb.AppendLine(string.Format("║ ITBIS (18%):      RD${0,7:N0} ║", baseI * 0.18m));
             sb.AppendLine("╠═══════════════════════════════╣");
             sb.AppendLine(string.Format("║ TOTAL:           RD${0,8:N0} ║", baseI * 1.18m));
@@ -175,12 +170,11 @@ namespace PeluqueriaElCojo
 
         private void LimpiarChecks()
         {
-            chkCorteNormal.Checked = false;
-            chkDegradado.Checked = false;
-            chkAfeitado.Checked = false;
-            chkToalla.Checked = false;
-            chkCejas.Checked = false;
-            numNivel.Value = 1;
+            // Desmarcamos todos los items de la lista CheckedListBox
+            for (int i = 0; i < clbItems.Items.Count; i++)
+            {
+                clbItems.SetItemChecked(i, false);
+            }
         }
 
         private void pcbSalir_Click(object sender, EventArgs e)
@@ -190,7 +184,7 @@ namespace PeluqueriaElCojo
 
         private void FormVenta_Load(object sender, EventArgs e)
         {
-
+            RefrescarCatalogo();
         }
 
         private void numNivel_ValueChanged(object sender, EventArgs e)
@@ -218,6 +212,55 @@ namespace PeluqueriaElCojo
             string reporte = GeneradorReportes.GenerarLista(_empleados, "Ranking de Barberos por Ventas");
 
             MessageBox.Show(reporte, "Ranking de Ventas");
+        }
+
+        private void btnGestionarInventario_Click(object sender, EventArgs e)
+        {
+            FormInventario frm = new FormInventario();
+            frm.ShowDialog();
+            RefrescarCatalogo(); // Recargamos la lista después de crear productos
+        }
+        private void RefrescarCatalogo()
+        {
+            clbItems.Items.Clear();
+            // Agregamos Servicios (Herencia)
+            clbItems.Items.Add(new CorteNormal());
+            clbItems.Items.Add(new Afeitado(false));
+            clbItems.Items.Add(new Degradado(1));
+            clbItems.Items.Add(new CorteCejas());
+
+            // Agregamos Productos desde SQL
+            try
+            {
+                using (SqlConnection conn = ConexionDB.ObtenerConexion())
+                {
+                    string q = "SELECT Codigo, Nombre, Precio, Stock FROM Productos";
+                    SqlCommand cmd = new SqlCommand(q, conn);
+                    SqlDataReader r = cmd.ExecuteReader();
+                    while (r.Read())
+                    {
+                        clbItems.Items.Add(new Producto
+                        {
+                            Codigo = r["Codigo"].ToString(),
+                            Nombre = r["Nombre"].ToString(),
+                            Precio = (decimal)r["Precio"],
+                            Stock = (int)r["Stock"]
+                        });
+                    }
+                }
+            }
+            catch { /* Manejar error silenciosamente */ }
+        }
+
+
+        private void clbItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRecibo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,13 +34,7 @@
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.lstClientes = new System.Windows.Forms.ListBox();
-            this.chkCorteNormal = new System.Windows.Forms.CheckBox();
-            this.chkDegradado = new System.Windows.Forms.CheckBox();
-            this.chkAfeitado = new System.Windows.Forms.CheckBox();
-            this.chkToalla = new System.Windows.Forms.CheckBox();
-            this.chkCejas = new System.Windows.Forms.CheckBox();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.numNivel = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,9 +42,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pcbSalir = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnVerRanking = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numNivel)).BeginInit();
+            this.clbItems = new System.Windows.Forms.CheckedListBox();
+            this.btnGestionarInventario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbSalir)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +79,7 @@
             this.txtRecibo.Name = "txtRecibo";
             this.txtRecibo.Size = new System.Drawing.Size(396, 380);
             this.txtRecibo.TabIndex = 2;
+            this.txtRecibo.TextChanged += new System.EventHandler(this.txtRecibo_TextChanged);
             // 
             // btnAgregarCliente
             // 
@@ -102,9 +97,9 @@
             // 
             this.btnCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnCobrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(528, 518);
+            this.btnCobrar.Location = new System.Drawing.Point(1025, 593);
             this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(109, 42);
+            this.btnCobrar.Size = new System.Drawing.Size(168, 54);
             this.btnCobrar.TabIndex = 4;
             this.btnCobrar.Text = "COBRAR";
             this.btnCobrar.UseVisualStyleBackColor = false;
@@ -124,99 +119,17 @@
             this.lstClientes.TabIndex = 5;
             this.lstClientes.SelectedIndexChanged += new System.EventHandler(this.lstClientes_SelectedIndexChanged);
             // 
-            // chkCorteNormal
-            // 
-            this.chkCorteNormal.AutoSize = true;
-            this.chkCorteNormal.BackColor = System.Drawing.Color.Ivory;
-            this.chkCorteNormal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkCorteNormal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCorteNormal.Location = new System.Drawing.Point(493, 209);
-            this.chkCorteNormal.Name = "chkCorteNormal";
-            this.chkCorteNormal.Size = new System.Drawing.Size(222, 27);
-            this.chkCorteNormal.TabIndex = 6;
-            this.chkCorteNormal.Text = "Corte Normal (RD$200)";
-            this.chkCorteNormal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkCorteNormal.UseVisualStyleBackColor = false;
-            // 
-            // chkDegradado
-            // 
-            this.chkDegradado.AutoSize = true;
-            this.chkDegradado.BackColor = System.Drawing.Color.Ivory;
-            this.chkDegradado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkDegradado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDegradado.Location = new System.Drawing.Point(493, 312);
-            this.chkDegradado.Name = "chkDegradado";
-            this.chkDegradado.Size = new System.Drawing.Size(122, 27);
-            this.chkDegradado.TabIndex = 7;
-            this.chkDegradado.Text = "Degradado";
-            this.chkDegradado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkDegradado.UseVisualStyleBackColor = false;
-            // 
-            // chkAfeitado
-            // 
-            this.chkAfeitado.AutoSize = true;
-            this.chkAfeitado.BackColor = System.Drawing.Color.Ivory;
-            this.chkAfeitado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkAfeitado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAfeitado.Location = new System.Drawing.Point(493, 258);
-            this.chkAfeitado.Name = "chkAfeitado";
-            this.chkAfeitado.Size = new System.Drawing.Size(183, 27);
-            this.chkAfeitado.TabIndex = 8;
-            this.chkAfeitado.Text = "\tAfeitado (RD$150)";
-            this.chkAfeitado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkAfeitado.UseVisualStyleBackColor = false;
-            // 
-            // chkToalla
-            // 
-            this.chkToalla.AutoSize = true;
-            this.chkToalla.BackColor = System.Drawing.Color.Ivory;
-            this.chkToalla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkToalla.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkToalla.Location = new System.Drawing.Point(493, 396);
-            this.chkToalla.Name = "chkToalla";
-            this.chkToalla.Size = new System.Drawing.Size(178, 27);
-            this.chkToalla.TabIndex = 9;
-            this.chkToalla.Text = "+ Toalla (+RD$50)";
-            this.chkToalla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkToalla.UseVisualStyleBackColor = false;
-            // 
-            // chkCejas
-            // 
-            this.chkCejas.AutoSize = true;
-            this.chkCejas.BackColor = System.Drawing.Color.Ivory;
-            this.chkCejas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkCejas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCejas.Location = new System.Drawing.Point(493, 437);
-            this.chkCejas.Name = "chkCejas";
-            this.chkCejas.Size = new System.Drawing.Size(144, 27);
-            this.chkCejas.TabIndex = 10;
-            this.chkCejas.Text = "Cejas (RD$75)";
-            this.chkCejas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkCejas.UseVisualStyleBackColor = false;
-            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.Ivory;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(900, 586);
+            this.lblTotal.Location = new System.Drawing.Point(847, 606);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(135, 28);
             this.lblTotal.TabIndex = 11;
             this.lblTotal.Text = "TOTAL: RD$0";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // numNivel
-            // 
-            this.numNivel.BackColor = System.Drawing.Color.Ivory;
-            this.numNivel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numNivel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numNivel.Location = new System.Drawing.Point(493, 340);
-            this.numNivel.Name = "numNivel";
-            this.numNivel.Size = new System.Drawing.Size(122, 30);
-            this.numNivel.TabIndex = 12;
-            this.numNivel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numNivel.ValueChanged += new System.EventHandler(this.numNivel_ValueChanged);
             // 
             // label1
             // 
@@ -306,14 +219,6 @@
             this.pcbSalir.TabStop = false;
             this.pcbSalir.Click += new System.EventHandler(this.pcbSalir_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Ivory;
-            this.panel1.Location = new System.Drawing.Point(493, 208);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(224, 290);
-            this.panel1.TabIndex = 22;
-            // 
             // btnVerRanking
             // 
             this.btnVerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -326,6 +231,29 @@
             this.btnVerRanking.UseVisualStyleBackColor = false;
             this.btnVerRanking.Click += new System.EventHandler(this.btnVerRanking_Click);
             // 
+            // clbItems
+            // 
+            this.clbItems.BackColor = System.Drawing.Color.Ivory;
+            this.clbItems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clbItems.FormattingEnabled = true;
+            this.clbItems.Location = new System.Drawing.Point(457, 272);
+            this.clbItems.Name = "clbItems";
+            this.clbItems.Size = new System.Drawing.Size(274, 259);
+            this.clbItems.TabIndex = 24;
+            this.clbItems.SelectedIndexChanged += new System.EventHandler(this.clbItems_SelectedIndexChanged);
+            // 
+            // btnGestionarInventario
+            // 
+            this.btnGestionarInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnGestionarInventario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarInventario.Location = new System.Drawing.Point(477, 184);
+            this.btnGestionarInventario.Name = "btnGestionarInventario";
+            this.btnGestionarInventario.Size = new System.Drawing.Size(239, 53);
+            this.btnGestionarInventario.TabIndex = 25;
+            this.btnGestionarInventario.Text = "Crear Productos";
+            this.btnGestionarInventario.UseVisualStyleBackColor = false;
+            this.btnGestionarInventario.Click += new System.EventHandler(this.btnGestionarInventario_Click);
+            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -334,6 +262,8 @@
             this.BackgroundImage = global::PeluqueriaElCojo.Properties.Resources.Gemini_Generated_Image_ukaddyukaddyukad;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1205, 676);
+            this.Controls.Add(this.btnGestionarInventario);
+            this.Controls.Add(this.clbItems);
             this.Controls.Add(this.btnVerRanking);
             this.Controls.Add(this.pcbSalir);
             this.Controls.Add(this.label6);
@@ -342,26 +272,18 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numNivel);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.chkCejas);
-            this.Controls.Add(this.chkToalla);
-            this.Controls.Add(this.chkAfeitado);
-            this.Controls.Add(this.chkDegradado);
-            this.Controls.Add(this.chkCorteNormal);
             this.Controls.Add(this.lstClientes);
             this.Controls.Add(this.btnCobrar);
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.txtRecibo);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVenta";
             this.Text = "PELUQUERIA";
             this.Load += new System.EventHandler(this.FormVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numNivel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbSalir)).EndInit();
             this.ResumeLayout(false);
@@ -377,13 +299,7 @@
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnCobrar;
         private System.Windows.Forms.ListBox lstClientes;
-        private System.Windows.Forms.CheckBox chkCorteNormal;
-        private System.Windows.Forms.CheckBox chkDegradado;
-        private System.Windows.Forms.CheckBox chkAfeitado;
-        private System.Windows.Forms.CheckBox chkToalla;
-        private System.Windows.Forms.CheckBox chkCejas;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.NumericUpDown numNivel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -391,8 +307,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pcbSalir;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnVerRanking;
+        private System.Windows.Forms.CheckedListBox clbItems;
+        private System.Windows.Forms.Button btnGestionarInventario;
     }
 }
 
