@@ -220,6 +220,36 @@ namespace PeluqueriaElCojo
             frm.ShowDialog();
             RefrescarCatalogo(); // Recargamos la lista después de crear productos
         }
+
+        private void CargarEmpleadosDesdeSQL()
+        {
+            _empleados.Clear();
+            try
+            {
+                using (SqlConnection conn = ConexionDB.ObtenerConexion())
+                {
+                    string query = "SELECT Id, Nombre, Apodo, SueldoBase FROM Empleados";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader r = cmd.ExecuteReader();
+                    while (r.Read())
+                    {
+                        _empleados.Add(new Empleado
+                        {
+                            Id = (int)r["Id"],
+                            Nombre = r["Nombre"].ToString(),
+                            Apodo = r["Apodo"].ToString(),
+                            SueldoBase = Convert.ToDecimal(r["SueldoBase"]),
+                            VentasAcumuladas = 0 // En una versión pro, aquí sumarías sus facturas
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar barberos: " + ex.Message);
+            }
+        }
+
         private void RefrescarCatalogo()
         {
             clbItems.Items.Clear();
@@ -261,6 +291,13 @@ namespace PeluqueriaElCojo
         private void txtRecibo_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegistrarBarbero_Click(object sender, EventArgs e)
+        {
+            FormEmpleados frm = new FormEmpleados();
+            frm.ShowDialog();
+            CargarEmpleadosDesdeSQL(); // Actualiza la lista después de registrar
         }
     }
 }

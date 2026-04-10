@@ -45,6 +45,7 @@
             this.btnVerRanking = new System.Windows.Forms.Button();
             this.clbItems = new System.Windows.Forms.CheckedListBox();
             this.btnGestionarInventario = new System.Windows.Forms.Button();
+            this.btnRegistrarBarbero = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbSalir)).BeginInit();
             this.SuspendLayout();
@@ -223,7 +224,7 @@
             // 
             this.btnVerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnVerRanking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerRanking.Location = new System.Drawing.Point(886, 25);
+            this.btnVerRanking.Location = new System.Drawing.Point(934, 25);
             this.btnVerRanking.Name = "btnVerRanking";
             this.btnVerRanking.Size = new System.Drawing.Size(154, 42);
             this.btnVerRanking.TabIndex = 23;
@@ -254,6 +255,18 @@
             this.btnGestionarInventario.UseVisualStyleBackColor = false;
             this.btnGestionarInventario.Click += new System.EventHandler(this.btnGestionarInventario_Click);
             // 
+            // btnRegistrarBarbero
+            // 
+            this.btnRegistrarBarbero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRegistrarBarbero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarBarbero.Location = new System.Drawing.Point(736, 25);
+            this.btnRegistrarBarbero.Name = "btnRegistrarBarbero";
+            this.btnRegistrarBarbero.Size = new System.Drawing.Size(154, 42);
+            this.btnRegistrarBarbero.TabIndex = 26;
+            this.btnRegistrarBarbero.Text = "Empleados";
+            this.btnRegistrarBarbero.UseVisualStyleBackColor = false;
+            this.btnRegistrarBarbero.Click += new System.EventHandler(this.btnRegistrarBarbero_Click);
+            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,6 +275,7 @@
             this.BackgroundImage = global::PeluqueriaElCojo.Properties.Resources.Gemini_Generated_Image_ukaddyukaddyukad;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1205, 676);
+            this.Controls.Add(this.btnRegistrarBarbero);
             this.Controls.Add(this.btnGestionarInventario);
             this.Controls.Add(this.clbItems);
             this.Controls.Add(this.btnVerRanking);
@@ -310,6 +324,7 @@
         private System.Windows.Forms.Button btnVerRanking;
         private System.Windows.Forms.CheckedListBox clbItems;
         private System.Windows.Forms.Button btnGestionarInventario;
+        private System.Windows.Forms.Button btnRegistrarBarbero;
     }
 }
 

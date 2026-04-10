@@ -10,23 +10,29 @@ namespace PeluqueriaElCojo.Modelos
     public class Empleado : IComparable<Empleado>
     {
         public int Id { get; set; }
-        [Requerido]
+
+        [Requerido] // Punto: Atributos Personalizados
         public string Nombre { get; set; }
+
         public string Apodo { get; set; }
         public string Cedula { get; set; }
+
+        // Esta es la propiedad que te faltaba y causaba el error
+        public decimal SueldoBase { get; set; }
+
         public decimal VentasAcumuladas { get; set; }
 
-        // Implementación de IComparable para ordenar por ventas
+        // IComparable: Requerido para el Ranking
         public int CompareTo(Empleado other)
         {
             if (other == null) return 1;
-            // Orden descendente (de mayor a menor venta)
+            // Ordenar de mayor a menor venta
             return other.VentasAcumuladas.CompareTo(this.VentasAcumuladas);
         }
 
         public override string ToString()
         {
-            return string.Format("{0} - Ventas: RD${1:N2}", Apodo, VentasAcumuladas);
+            return string.Format("{0} - Total Ventas: RD${1:N0}", Apodo, VentasAcumuladas);
         }
     }
 }

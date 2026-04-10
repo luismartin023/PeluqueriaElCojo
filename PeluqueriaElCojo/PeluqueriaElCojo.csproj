@@ -50,6 +50,12 @@
     <Compile Include="Atributos\RangoAttribute.cs" />
     <Compile Include="Atributos\RequeridoAttribute.cs" />
     <Compile Include="Atributos\ValidacionAttribute.cs" />
+    <Compile Include="FormEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpleados.Designer.cs">
+      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Utilidades\ConexionDB.cs" />
     <Compile Include="Utilidades\GeneradorReportes.cs" />
     <Compile Include="Utilidades\Validador.cs" />
+    <EmbeddedResource Include="FormEmpleados.resx">
+      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInventario.resx">
       <DependentUpon>FormInventario.cs</DependentUpon>
     </EmbeddedResource>
