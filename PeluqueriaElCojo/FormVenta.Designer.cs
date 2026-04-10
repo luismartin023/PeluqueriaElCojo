@@ -45,10 +45,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pcbSalir = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numNivel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbSalir)).BeginInit();
@@ -59,7 +59,7 @@
             this.txtNombre.BackColor = System.Drawing.Color.Ivory;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(63, 270);
+            this.txtNombre.Location = new System.Drawing.Point(63, 159);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(274, 30);
             this.txtNombre.TabIndex = 0;
@@ -69,7 +69,7 @@
             this.txtTelefono.BackColor = System.Drawing.Color.Ivory;
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(63, 347);
+            this.txtTelefono.Location = new System.Drawing.Point(63, 236);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(274, 30);
             this.txtTelefono.TabIndex = 1;
@@ -89,7 +89,7 @@
             // 
             this.btnAgregarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnAgregarCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCliente.Location = new System.Drawing.Point(477, 496);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(136, 561);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(116, 43);
             this.btnAgregarCliente.TabIndex = 3;
@@ -101,7 +101,7 @@
             // 
             this.btnCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnCobrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(917, 594);
+            this.btnCobrar.Location = new System.Drawing.Point(528, 518);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(109, 42);
             this.btnCobrar.TabIndex = 4;
@@ -117,9 +117,9 @@
             this.lstClientes.ForeColor = System.Drawing.Color.Black;
             this.lstClientes.FormattingEnabled = true;
             this.lstClientes.ItemHeight = 23;
-            this.lstClientes.Location = new System.Drawing.Point(12, 433);
+            this.lstClientes.Location = new System.Drawing.Point(12, 322);
             this.lstClientes.Name = "lstClientes";
-            this.lstClientes.Size = new System.Drawing.Size(427, 117);
+            this.lstClientes.Size = new System.Drawing.Size(386, 209);
             this.lstClientes.TabIndex = 5;
             this.lstClientes.SelectedIndexChanged += new System.EventHandler(this.lstClientes_SelectedIndexChanged);
             // 
@@ -129,7 +129,7 @@
             this.chkCorteNormal.BackColor = System.Drawing.Color.Ivory;
             this.chkCorteNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkCorteNormal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCorteNormal.Location = new System.Drawing.Point(477, 258);
+            this.chkCorteNormal.Location = new System.Drawing.Point(493, 209);
             this.chkCorteNormal.Name = "chkCorteNormal";
             this.chkCorteNormal.Size = new System.Drawing.Size(222, 27);
             this.chkCorteNormal.TabIndex = 6;
@@ -143,7 +143,7 @@
             this.chkDegradado.BackColor = System.Drawing.Color.Ivory;
             this.chkDegradado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkDegradado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDegradado.Location = new System.Drawing.Point(477, 348);
+            this.chkDegradado.Location = new System.Drawing.Point(493, 312);
             this.chkDegradado.Name = "chkDegradado";
             this.chkDegradado.Size = new System.Drawing.Size(122, 27);
             this.chkDegradado.TabIndex = 7;
@@ -157,7 +157,7 @@
             this.chkAfeitado.BackColor = System.Drawing.Color.Ivory;
             this.chkAfeitado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkAfeitado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAfeitado.Location = new System.Drawing.Point(477, 302);
+            this.chkAfeitado.Location = new System.Drawing.Point(493, 258);
             this.chkAfeitado.Name = "chkAfeitado";
             this.chkAfeitado.Size = new System.Drawing.Size(183, 27);
             this.chkAfeitado.TabIndex = 8;
@@ -171,7 +171,7 @@
             this.chkToalla.BackColor = System.Drawing.Color.Ivory;
             this.chkToalla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkToalla.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkToalla.Location = new System.Drawing.Point(477, 392);
+            this.chkToalla.Location = new System.Drawing.Point(493, 396);
             this.chkToalla.Name = "chkToalla";
             this.chkToalla.Size = new System.Drawing.Size(178, 27);
             this.chkToalla.TabIndex = 9;
@@ -185,7 +185,7 @@
             this.chkCejas.BackColor = System.Drawing.Color.Ivory;
             this.chkCejas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkCejas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCejas.Location = new System.Drawing.Point(477, 433);
+            this.chkCejas.Location = new System.Drawing.Point(493, 437);
             this.chkCejas.Name = "chkCejas";
             this.chkCejas.Size = new System.Drawing.Size(144, 27);
             this.chkCejas.TabIndex = 10;
@@ -198,7 +198,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.Ivory;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(458, 554);
+            this.lblTotal.Location = new System.Drawing.Point(900, 586);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(135, 28);
             this.lblTotal.TabIndex = 11;
@@ -210,20 +210,21 @@
             this.numNivel.BackColor = System.Drawing.Color.Ivory;
             this.numNivel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numNivel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numNivel.Location = new System.Drawing.Point(114, 604);
+            this.numNivel.Location = new System.Drawing.Point(493, 340);
             this.numNivel.Name = "numNivel";
-            this.numNivel.Size = new System.Drawing.Size(136, 30);
+            this.numNivel.Size = new System.Drawing.Size(122, 30);
             this.numNivel.TabIndex = 12;
             this.numNivel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numNivel.ValueChanged += new System.EventHandler(this.numNivel_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.Ivory;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Wheat;
-            this.label1.Location = new System.Drawing.Point(156, 232);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(155, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 25);
             this.label1.TabIndex = 13;
@@ -232,11 +233,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.Ivory;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Wheat;
-            this.label2.Location = new System.Drawing.Point(156, 315);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(153, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 25);
             this.label2.TabIndex = 14;
@@ -258,28 +259,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.BackColor = System.Drawing.Color.Ivory;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Wheat;
-            this.label4.Location = new System.Drawing.Point(153, 394);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(153, 286);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 25);
             this.label4.TabIndex = 16;
             this.label4.Text = "Clientes";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Wheat;
-            this.label5.Location = new System.Drawing.Point(134, 568);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 25);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Degradado";
             // 
             // pictureBox1
             // 
@@ -317,6 +305,14 @@
             this.pcbSalir.TabStop = false;
             this.pcbSalir.Click += new System.EventHandler(this.pcbSalir_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Ivory;
+            this.panel1.Location = new System.Drawing.Point(493, 208);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(224, 290);
+            this.panel1.TabIndex = 22;
+            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -328,7 +324,6 @@
             this.Controls.Add(this.pcbSalir);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -346,6 +341,7 @@
             this.Controls.Add(this.txtRecibo);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVenta";
@@ -378,10 +374,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pcbSalir;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -63,7 +63,7 @@ namespace PeluqueriaElCojo
         {
             decimal sub = 0;
             foreach (Servicio s in _servicios)
-                sub += s.CalcularPrecio();  
+                sub += s.CalcularPrecio();
             return sub * (1 - _clienteActual.ObtenerDescuento()) * 1.18m;
         }
 
@@ -117,6 +117,11 @@ namespace PeluqueriaElCojo
         }
 
         private void FormVenta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numNivel_ValueChanged(object sender, EventArgs e)
         {
 
         }

@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atributos\LongitudAttribute.cs" />
+    <Compile Include="Atributos\RangoAttribute.cs" />
+    <Compile Include="Atributos\RequeridoAttribute.cs" />
+    <Compile Include="Atributos\ValidacionAttribute.cs" />
     <Compile Include="FormVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +58,7 @@
     </Compile>
     <Compile Include="Modelos\Afeitado.cs" />
     <Compile Include="Modelos\Cliente.cs" />
+    <Compile Include="Modelos\ComboCompleto.cs" />
     <Compile Include="Modelos\CorteCejas.cs" />
     <Compile Include="Modelos\CorteNormal.cs" />
     <Compile Include="Modelos\Degradado.cs" />
