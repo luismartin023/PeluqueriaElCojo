@@ -13,6 +13,7 @@ namespace PeluqueriaElCojo
 
         private List<Cliente> _clientes = new List<Cliente>();
         private List<Servicio> _servicios = new List<Servicio>();
+        private List<Empleado> _empleados = new List<Empleado>();
         private Cliente _clienteActual = null;
 
         public FormVenta()
@@ -195,6 +196,28 @@ namespace PeluqueriaElCojo
         private void numNivel_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerRanking_Click(object sender, EventArgs e)
+        {
+            if (_empleados.Count == 0)
+            {
+                MessageBox.Show("No hay empleados registrados para mostrar el ranking.");
+                return;
+            }
+
+            // la lógica de comparación que pusimos en la clase Empleado.
+            _empleados.Sort();
+
+            // para generar el texto del reporte.
+            string reporte = GeneradorReportes.GenerarLista(_empleados, "Ranking de Barberos por Ventas");
+
+            MessageBox.Show(reporte, "Ranking de Ventas");
         }
     }
 }

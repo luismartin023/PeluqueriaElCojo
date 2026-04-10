@@ -49,6 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pcbSalir = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVerRanking = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numNivel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbSalir)).BeginInit();
@@ -313,6 +314,18 @@
             this.panel1.Size = new System.Drawing.Size(224, 290);
             this.panel1.TabIndex = 22;
             // 
+            // btnVerRanking
+            // 
+            this.btnVerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnVerRanking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerRanking.Location = new System.Drawing.Point(886, 25);
+            this.btnVerRanking.Name = "btnVerRanking";
+            this.btnVerRanking.Size = new System.Drawing.Size(154, 42);
+            this.btnVerRanking.TabIndex = 23;
+            this.btnVerRanking.Text = "Ver Ranking";
+            this.btnVerRanking.UseVisualStyleBackColor = false;
+            this.btnVerRanking.Click += new System.EventHandler(this.btnVerRanking_Click);
+            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,6 +334,7 @@
             this.BackgroundImage = global::PeluqueriaElCojo.Properties.Resources.Gemini_Generated_Image_ukaddyukaddyukad;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1205, 676);
+            this.Controls.Add(this.btnVerRanking);
             this.Controls.Add(this.pcbSalir);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
@@ -378,6 +392,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pcbSalir;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnVerRanking;
     }
 }
 
