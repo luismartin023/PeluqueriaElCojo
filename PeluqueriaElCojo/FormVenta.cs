@@ -16,7 +16,6 @@ namespace PeluqueriaElCojo
         private List<Empleado> _empleados = new List<Empleado>();
         private Cliente _clienteActual = null;
 
-
         public FormVenta()
         {
             InitializeComponent();
@@ -350,8 +349,6 @@ namespace PeluqueriaElCojo
             frm.ShowDialog();
             CargarEmpleadosDesdeSQL(); // Actualiza la lista después de registrar
         }
-
-
 
     }
 }
